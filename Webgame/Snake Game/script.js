@@ -2,13 +2,14 @@ let direction = { x: 0, y: 0 };
 const foodSound = new Audio('food.mp3');
 const gameOverSound = new Audio('gameover.mp3');
 const moveSound = new Audio('move.mp3');
-let speed = 5;
+let speed = 10;
 let score = 0;
 let lastPaintTime = 0;
 let snakeArr = [
     { x: 13, y: 15 }
 ];
 food = { x: 6, y: 7 };
+localStorage.clear();
 
 function main(ctime) {
     window.requestAnimationFrame(main);
@@ -81,17 +82,6 @@ function gameEngine() {
     foodElement.classList.add('food');
     board.appendChild(foodElement);
 }
-
-
-
-
-
-
-
-
-
-
-
 
 let hiscore = localStorage.getItem("hiscore");
 if(hiscore === null){
